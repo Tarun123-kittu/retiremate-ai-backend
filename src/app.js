@@ -12,6 +12,10 @@ app.use(express.json());
 // Routes
 app.use('/api/chat', chatRoutes);
 
+app.get('/api/test', (req, res) => {
+    res.status(200).json({ message: 'Test endpoint working ✅' });
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
